@@ -24,10 +24,16 @@ jobs:
       run: python -m pip install --upgrade requests
     
     - name: v.qq.com check in
-      env:
-        sckey: ${{ secrets.SCKEY }}
-        login_cookie: ${{ secrets.V_COOKIE_LOGIN }}
-        signin_cookie: ${{ secrets.V_COOKIE_SIGNIN }}
-        auth_refresh_url: ${{ secrets.V_AUTH_REFRESH_URL }}
-      run:
-        python3 main.py
+      run: |
+        pip install requests
+        sckey='${{ secrets.SCKEY }}'
+        login_cookie='${{ secrets.V_COOKIE_LOGIN }}'
+        signin_cookie='${{ secrets.V_COOKIE_SIGNIN }}'
+        auth_refresh_url='${{ secrets.V_AUTH_REFRESH_URL }}'
+        
+        python3 main.py <<EOF
+        ${sckey}
+        ${login_cookie}
+        ${signin_cookie}
+        ${auth_refresh_url}
+        EOF
