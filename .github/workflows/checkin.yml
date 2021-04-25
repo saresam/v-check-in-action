@@ -18,11 +18,10 @@ jobs:
     - name: Set python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.7'
+        python-version: '3.8'
 
     - name: v.qq.com check in
       run: |
-        pip install requests
         sckey='${{ secrets.SCKEY }}'
         login_cookie='${{ secrets.V_COOKIE_LOGIN }}'
         signin_cookie='${{ secrets.V_COOKIE_SIGNIN }}'
