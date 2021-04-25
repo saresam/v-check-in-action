@@ -21,16 +21,18 @@ jobs:
         python-version: '3.8'
     
     - name: Install dependencies
-      run: python -m pip install --upgrade requests
+      run: 
+        python -m pip install --upgrade requests
+        python -m pip install --upgrade pip
 
     - name: v.qq.com check in
-      run: 
+      env:
+        sckey: ${{ secrets.SCKEY }}
+        login_cookie: ${{ secrets.V_COOKIE_LOGIN }}
+        signin_cookie: ${{ secrets.V_COOKIE_SIGNIN }}
+        auth_refresh_url: ${{ secrets.V_AUTH_REFRESH_URL }}
+      run: |
         pip install requests
-        sckey='${{ secrets.SCKEY }}'
-        login_cookie='${{ secrets.V_COOKIE_LOGIN }}'
-        signin_cookie='${{ secrets.V_COOKIE_SIGNIN }}'
-        auth_refresh_url='${{ secrets.V_AUTH_REFRESH_URL }}'
-        
         python3 main.py <<EOF
         ${sckey}
         ${login_cookie}
