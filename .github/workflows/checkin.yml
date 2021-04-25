@@ -19,9 +19,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.8'
+    
+    - name: Install dependencies
+      run: python -m pip install --upgrade requests
 
     - name: v.qq.com check in
-      run: |
+      run: 
         pip install requests
         sckey='${{ secrets.SCKEY }}'
         login_cookie='${{ secrets.V_COOKIE_LOGIN }}'
