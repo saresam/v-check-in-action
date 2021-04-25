@@ -17,7 +17,7 @@ headers_login = {
 }
 
 # 测试一个签到请求
-login = requests.get(auth_refresh_url, headers=headers_login)
+login = requests.get(url=auth_refresh_url, headers=headers_login)
 cookie = requests.utils.dict_from_cookiejar(login.cookies)
 # 如果请求返回信息包含no login说明cookie已经失效
 if not cookie:
