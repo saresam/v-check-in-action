@@ -3,10 +3,10 @@
 
 import requests
 
-sckey = ''
-login_cookie = ''
-signin_cookie = ''
-auth_refresh_url = ''
+sckey = input()
+login_cookie = input()
+signin_cookie = input()
+auth_refresh_url = input()
 
 Referer = 'https://v.qq.com'
 Agent = 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'
