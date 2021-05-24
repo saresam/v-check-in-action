@@ -30,8 +30,6 @@ urls = [
     # 下载签到请求
     'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=hierarchical_task_system&cmd=2&_=1555060502385&callback=Zepto1555060502385',
     # 签到请求
-    'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=spp_MissionFaHuo&cmd=4&task_id=3&_=1582368319252&callback=Zepto1582368297765 ',
-    # 弹幕签到请求
     'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=spp_MissionFaHuo&cmd=4&task_id=1&_=1582997048625&callback=Zepto1582997031843',
     # 观看60分钟签到
 ]
@@ -44,8 +42,6 @@ for url in urls:
     elif (count == 2):
         print("发送每日签到任务请求")
     elif (count == 3):
-        print("发送每日弹幕任务请求")
-    elif (count == 4):
         print("发送每日观影60分钟任务请求")
     refresh_cookie = cookie['vqq_vusession']
     headers_signin = {
