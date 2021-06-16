@@ -26,8 +26,6 @@ if not cookie:
     requests.get(send_url)
 
 urls = [
-    'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=spp_MissionFaHuo&cmd=4&task_id=7&_=1582364733058&callback=Zepto1582364712694',
-    # 下载签到请求
     'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=hierarchical_task_system&cmd=2&_=1555060502385&callback=Zepto1555060502385',
     # 签到请求
     'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=spp_MissionFaHuo&cmd=4&task_id=1&_=1582997048625&callback=Zepto1582997031843',
@@ -38,10 +36,8 @@ resultContent = ''
 for url in urls:
     count += 1
     if (count == 1):
-        print("发送每日下载任务请求")
-    elif (count == 2):
         print("发送每日签到任务请求")
-    elif (count == 3):
+    elif (count == 2):
         print("发送每日观影60分钟任务请求")
     refresh_cookie = cookie['vqq_vusession']
     headers_signin = {
