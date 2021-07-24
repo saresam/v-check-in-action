@@ -42,7 +42,7 @@ for url in urls:
     refresh_cookie = cookie['vqq_vusession']
     headers_signin = {
       'User-Agent': Agent,
-      'Cookie': signin_cookie + refresh_cookie + ';_video_qq_vusession=' + refresh_cookie + ';',
+      'Cookie': signin_cookie + refresh_cookie + ' video_qq_vusession=' + refresh_cookie + ';',
       'Referer': Referer
     }
     response = requests.get(url=url, headers=headers_signin)
